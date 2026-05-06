@@ -52,18 +52,18 @@ def update():
 # マス数え
 def count_sq(board, player):
     count = 0
-    # for y in range(data.H):
-    #     for x in range(data.W):
-    #         if board[y][x] == player:
-    #             count += 1
+    for y in range(data.H):
+        for x in range(data.W):
+            if board[y][x] == player:
+                count += 1
     return count
 
 # 有効マス一覧取得
 def get_valid_sqs(board, player):
     valid_sqs = []
-    # for y in range(data.H):
-    #     for x in range(data.W):
-    #         sqs = op.test_put(board, x, y, player)
-    #         if len(sqs) > 0:
-    #             valid_sqs.append({'x': x, 'y': y})
+    for y in range(data.H):
+        for x in range(data.W):
+            sqs = op.test_put(board, x, y, player)
+            if len(sqs) > 0:
+                valid_sqs.append({'x': x, 'y': y})
     return valid_sqs
