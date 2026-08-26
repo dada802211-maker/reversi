@@ -1,4 +1,4 @@
-# from . import data
+from . import data
 
 # 石を置く（盤面、x、y, 裏返せるマスの, プレイヤー）
 def put(board, x, y, sqs, player):
@@ -9,32 +9,36 @@ def put(board, x, y, sqs, player):
 
 # 石を置けるか確認（戻り値は、裏返せるマスのリスト）
 def test_put(board, x, y, player):
-    return []
     # 石を置けるか確認
-    # if in_board(x, y) == False: return []   # 盤面範囲外
-    # if board[y][x] != data.BLANK: return [] # すでに石がある
+    if in_board(x, y) == False: return []   # 盤面範囲外
+    if board[y][x] != data.BLANK: return [] # すでに石がある
 
     # 8方向のマスのリストを得る
-    # lines = get8dir(board, x, y)
+    lines = get8dir(board, x, y)
 
     # 裏返せるマスのリストを得る
-    # sqs = []
-    # for line in lines:
-    #     sqs.extend(get_reverse(line, player))   # 裏返せるマスのリストを追加
-    # return sqs
+    sqs = []
+    for line in lines:
+        sqs.extend(get_reverse(line, player))   # 裏返せるマスのリストを追加
+    return sqs
 
 # 盤面の範囲内か
-# def in_board(x, y):
-#     return 0 <= x < data.W and 0 <= y < data.H
+def in_board(x, y):
+    return 0 <= x < data.W and 0 <= y < data.H
 
 # 基点のXYから8方向のマスを取得
-# def get8dir(board, x, y):
-#     dirs = [    # 8方向
-#         {'x': -1, 'y': -1}, {'x': 0, 'y': -1}, {'x':  1, 'y': -1},
-#         {'x': -1, 'y':  0},                    {'x':  1, 'y':  0},
-#         {'x': -1, 'y':  1}, {'x': 0, 'y':  1}, {'x':  1, 'y':  1}
-#     ]
-#     lines = []
+def get8dir(board, x, y):
+    lines = [[{'x': 5, 'y': 5, 'p': 0},
+              {'x': 6, 'y': 5, 'p': 0},
+              {'x': 7, 'y': 5, 'p': 2}],
+        [], [], [], [], [], [], [], ]
+    return lines
+    # dirs = [    # 8方向
+    #     {'x': -1, 'y': -1}, {'x': 0, 'y': -1}, {'x':  1, 'y': -1},
+    #     {'x': -1, 'y':  0},                    {'x':  1, 'y':  0},
+    #     {'x': -1, 'y':  1}, {'x': 0, 'y':  1}, {'x':  1, 'y':  1}
+    # ]
+    # lines = []
 #     for dir in dirs:
 #         lines.append(get_line(board, x, y, dir['x'], dir['y']))
 #     return lines
@@ -52,7 +56,8 @@ def test_put(board, x, y, player):
 #     return res
 
 # 裏返せるマスのリストを得る
-# def get_reverse(line, player):
+def get_reverse(line, player):
+    return []
 #     enemy = 1 - player
 
     # 前提条件
