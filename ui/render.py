@@ -31,18 +31,18 @@ def to_string_info(info):
 
 # 盤面テキスト
 def to_string_board(board, valid_board):
-    return ''
-#     lines = ['    x0 x1 x2 x3 x4 x5 x6 x7']
-#     for y, sq_row in enumerate(board):  # 1行取得
-#         line = f'y{y} '
-#         for x, sq in enumerate(sq_row): # 1マス取得
-#             if valid_board[y][x]:
-#                 line += sq_view[-1]
-#             else:
-#                 line += sq_view[sq]
-#         lines.append(line)
-#     return '\n'.join(lines)
+    # return ''
+    lines = ['    x0 x1 x2 x3 x4 x5 x6 x7']
+    for y, sq_row in enumerate(board):  # 1行取得
+        line = f'y{y} '
+        for x, sq in enumerate(sq_row): # 1マス取得
+            if valid_board[y][x]:
+                line += sq_view[-1]
+            else:
+                line += sq_view[sq]
+        lines.append(line)
+    return '\n'.join(lines)
 
 # # COM位置出力
-# def print_com_pos(pos):
-#     print_t(f'com: {pos['x']} {pos['y']}\n')
+def print_com_pos(pos):
+    print_t(f'com: {pos['x']} {pos['y']}\n')
