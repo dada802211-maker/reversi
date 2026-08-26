@@ -28,32 +28,27 @@ def in_board(x, y):
 
 # 基点のXYから8方向のマスを取得
 def get8dir(board, x, y):
-    lines = [[{'x': 5, 'y': 5, 'p': 0},
-              {'x': 6, 'y': 5, 'p': 0},
-              {'x': 7, 'y': 5, 'p': 2}],
-        [], [], [], [], [], [], [], ]
+    dirs = [    # 8方向
+        {'x': -1, 'y': -1}, {'x': 0, 'y': -1}, {'x':  1, 'y': -1},
+        {'x': -1, 'y':  0},                    {'x':  1, 'y':  0},
+        {'x': -1, 'y':  1}, {'x': 0, 'y':  1}, {'x':  1, 'y':  1}
+    ]
+    lines = []
+    for dir in dirs:
+        lines.append(get_line(board, x, y, dir['x'], dir['y']))
     return lines
-    # dirs = [    # 8方向
-    #     {'x': -1, 'y': -1}, {'x': 0, 'y': -1}, {'x':  1, 'y': -1},
-    #     {'x': -1, 'y':  0},                    {'x':  1, 'y':  0},
-    #     {'x': -1, 'y':  1}, {'x': 0, 'y':  1}, {'x':  1, 'y':  1}
-    # ]
-    # lines = []
-#     for dir in dirs:
-#         lines.append(get_line(board, x, y, dir['x'], dir['y']))
-#     return lines
 
 # 1方向のマスの一覧を得る
-# def get_line(board, start_x, start_y, dir_x, dir_y):
-#     res = []
-#     move = 1    # マス移動位置
-#     while True:
-#         x = start_x + move * dir_x
-#         y = start_y + move * dir_y
-#         if not in_board(x, y): break    # 範囲外
-#         res.append({'x': x, 'y': y, 'p': board[y][x]})
-#         move += 1
-#     return res
+def get_line(board, start_x, start_y, dir_x, dir_y):
+    res = []
+    move = 1    # マス移動位置
+    while True:
+        x = start_x + move * dir_x
+        y = start_y + move * dir_y
+        if not in_board(x, y): break    # 範囲外
+        res.append({'x': x, 'y': y, 'p': board[y][x]})
+        move += 1
+    return res
 
 # 裏返せるマスのリストを得る
 def get_reverse(line, player):
