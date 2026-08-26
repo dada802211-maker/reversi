@@ -2,10 +2,9 @@ from . import data
 
 # 石を置く（盤面、x、y, 裏返せるマスの, プレイヤー）
 def put(board, x, y, sqs, player):
-    pass
-#     board[y][x] = player   # 石を置いたマス
-#     for sq in sqs:
-#         board[sq['y']][sq['x']] = player   # 裏返したマス
+    board[y][x] = player   # 石を置いたマス
+    for sq in sqs:
+        board[sq['y']][sq['x']] = player   # 裏返したマス
 
 # 石を置けるか確認（戻り値は、裏返せるマスのリスト）
 def test_put(board, x, y, player):
