@@ -1,4 +1,4 @@
-from . import win
+from . import win, tarea
 # from . import win, tarea, button, board
 from rev import info, data
 from ui import proc
@@ -8,7 +8,7 @@ def start():
     info.update()  # 情報更新
 
     root = win.init_win()
-    # tarea.init(root)
+    tarea.init(root)
     # button.init(root)
     # board.init(root)
 

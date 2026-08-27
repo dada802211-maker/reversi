@@ -10,18 +10,18 @@ def init(root):
     tarea_text = ''
 
 # # リセット
-# def reset():
-#     global tarea_text
-#     tarea_text = ''
-#     tarea.delete('1.0', tk.END)     # 先頭から末尾まで消す
+def reset():
+    global tarea_text
+    tarea_text = ''
+    tarea.delete('1.0', tk.END)     # 先頭から末尾まで消す
 
 # # 仮想プリント
-# def vprint(text):
-#     try:
-#         global tarea_text
-#         tarea_text += text + '\n'
-#         tarea.delete('1.0', tk.END)     # 先頭から末尾まで消す
-#         tarea.insert('1.0', tarea_text) # 先頭にテキストを挿入
-#         tarea.see(tk.END)               # 末尾に移動
-#     except Exception:
-#         pass
+def vprint(text):
+    try:
+        global tarea_text
+        tarea_text += text + '\n'
+        tarea.delete('1.0', tk.END)     # 先頭から末尾まで消す
+        tarea.insert('1.0', tarea_text) # 先頭にテキストを挿入
+        tarea.see(tk.END)               # 末尾に移動
+    except Exception:
+        pass

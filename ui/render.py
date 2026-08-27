@@ -1,5 +1,5 @@
 import config
-# from gui import tarea
+from gui import tarea
 
 sq_view = ['[o]', '[x]', '[ ]', '[*]']
 
@@ -9,18 +9,16 @@ def print_t(t):
         print(t)
     if config.ui_type == config.TYPE_GUI:
         pass  # GUI出力実装予定
-        # tarea.vprint(t)
+        tarea.vprint(t)
 
 # 情報出力
 def print_info(info):
-    # pass
     t_board = to_string_board(info['board'], info['valid_board'])
     t_info = to_string_info(info)
     print_t(t_board + '\n' + t_info)
 
 # 情報テキスト
 def to_string_info(info):
-    # return ''
     c = info['count']
     t_score = f'Score 0: {c[0]}, 1: {c[1]}'
 
@@ -31,7 +29,6 @@ def to_string_info(info):
 
 # 盤面テキスト
 def to_string_board(board, valid_board):
-    # return ''
     lines = ['    x0 x1 x2 x3 x4 x5 x6 x7']
     for y, sq_row in enumerate(board):  # 1行取得
         line = f'y{y} '
