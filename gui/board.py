@@ -1,5 +1,5 @@
 import tkinter as tk
-# import tkinter.messagebox as messagebox
+import tkinter.messagebox as messagebox
 from . import gui, board_render, tarea
 from rev import data, info
 from ui import render, proc
@@ -54,5 +54,4 @@ def exec_com():
 
 # ゲーム終了
 def end():
-    pass
-#     messagebox.showinfo('ゲーム終了', info.info['result'][0])
+    messagebox.showinfo('ゲーム終了', info.info['result'][0])
