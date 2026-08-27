@@ -1,6 +1,6 @@
 import tkinter as tk
 # import tkinter.messagebox as messagebox
-from . import gui
+from . import gui, board_render
 # from . import gui, board_render, tarea
 # from rev import data, info
 # from ui import render, proc
@@ -16,8 +16,7 @@ def init(root):
 
 # 描画
 def draw():
-    pass
-#     board_render.draw(canvas)
+    board_render.draw(canvas)
 
 # キャンバス石置き
 def put(event):
