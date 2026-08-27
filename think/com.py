@@ -34,16 +34,15 @@ def eval_table(x, y):
 
 # 次手確認（石を配置した場合の"次の"プレイヤーの点数を引く）
 def eval_next(x, y, board, player, nest):
-#     # nestが2以上のとき
-#     if nest >= 2: return 0
+    # nestが2以上のとき
+    if nest >= 2: return 0
 
-#     # 裏返し処理
-#     board2 = copy.deepcopy(board)   # 深い複製
-#     sqs = op.test_put(board2, x, y, player)
-#     op.put(board2, x, y, sqs, player)       # 石を置く
+    # 裏返し処理
+    board2 = copy.deepcopy(board)   # 深い複製
+    sqs = op.test_put(board2, x, y, player)
+    op.put(board2, x, y, sqs, player)       # 石を置く
 
-#     # 相手方手番
-#     enemy = 1 - player
-#     param = think(board2, enemy, nest + 1)  # 再度思考
-#     return - param['value']     # 次の手番の最大評価値を引く
-    return 0
+    # 相手方手番
+    enemy = 1 - player
+    param = think(board2, enemy, nest + 1)  # 再度思考
+    return - param['value']     # 次の手番の最大評価値を引く
