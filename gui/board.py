@@ -40,18 +40,17 @@ def put(event):
 
 # COM実行
 def exec_com():
-    pass
-#     res = com.get_pos()
-#     render.print_com_pos(res)
-#     data.record_put(res['x'], res['y'], data.player)
-#     proc.put(res['x'], res['y'])
-#     draw()
+    res = com.get_pos()
+    render.print_com_pos(res)
+    data.record_put(res['x'], res['y'], data.player)
+    proc.put(res['x'], res['y'])
+    draw()
 
-#     # 処理の分岐
-#     if info.info['is_end']:
-#         canvas.after(1000, end)     # 終了時処理
-#     elif data.player == 1:
-#         canvas.after(500, exec_com) # 人スキップ時処理
+    # 処理の分岐
+    if info.info['is_end']:
+        canvas.after(1000, end)     # 終了時処理
+    elif data.player == 1:
+        canvas.after(500, exec_com) # 人スキップ時処理
 
 # ゲーム終了
 def end():
