@@ -42,20 +42,19 @@ def draw_sq(canvas, rect):
 
 # 石描画
 def draw_token(canvas, rect, player):
-    pass
-#     x0, y0, x1, y1 = rect
-#     margin = 8
-#     pad = 4
+    x0, y0, x1, y1 = rect
+    margin = 8
+    pad = 4
 
-#     # 外描画
-#     x0 += margin; y0 += margin; x1 -= margin; y1 -= margin
-#     col = ['#101010', '#f0f0f0'][player]
-#     canvas.create_oval(x0, y0, x1, y1, fill=col, width=0)
+    # 外描画
+    x0 += margin; y0 += margin; x1 -= margin; y1 -= margin
+    col = ['#101010', '#f0f0f0'][player]
+    canvas.create_oval(x0, y0, x1, y1, fill=col, width=0)
 
-#     # 内描画
-#     x0 += pad; y0 += pad; x1 -= pad; y1 -= pad
-#     col = ['#202020', '#ffffff'][player]
-#     canvas.create_oval(x0, y0, x1, y1, fill=col, width=0)
+    # 内描画
+    x0 += pad; y0 += pad; x1 -= pad; y1 -= pad
+    col = ['#202020', '#ffffff'][player]
+    canvas.create_oval(x0, y0, x1, y1, fill=col, width=0)
 
 # 表示描画（valid:配置可能マス、put:配置マス）
 def draw_view(canvas, rect, view='valid'):
