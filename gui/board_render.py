@@ -6,30 +6,31 @@ from rev import data, info
 def draw(canvas):
     canvas.delete(tk.ALL)   # 全削除
 
-#     # 描画
-#     for y in range(data.H):
-#         for x in range(data.W):
-#             rect = get_rect(x, y)
-#             draw_sq(canvas, rect)   # マス
+    # 描画
+    for y in range(data.H):
+        for x in range(data.W):
+            rect = get_rect(x, y)
+            draw_sq(canvas, rect)   # マス
 
-#             sq = data.board[y][x]
-#             if sq <= 1: draw_token(canvas, rect, sq)    # 石
+            sq = data.board[y][x]
+            if sq <= 1: draw_token(canvas, rect, sq)    # 石
 
-#             valid_sq = info.info['valid_board'][y][x]
-#             if valid_sq : draw_view(canvas, rect, 'valid')  # 配置可能マス
+            valid_sq = info.info['valid_board'][y][x]
+            if valid_sq : draw_view(canvas, rect, 'valid')  # 配置可能マス
 
-#     # 配置マス
-#     put_x = info.info['put_x']; put_y = info.info['put_y']
-#     if put_x != -1: draw_view(canvas, get_rect(put_x, put_y), 'put')
+    # 配置マス
+    put_x = info.info['put_x']; put_y = info.info['put_y']
+    if put_x != -1: draw_view(canvas, get_rect(put_x, put_y), 'put')
 
-# # マス座標取得（左上xy、右下xy）
-# def get_rect(x, y):
-#     sq = gui.cnvs_sq
-#     rect = (x * sq, y * sq, (x + 1) * sq, (y + 1) * sq)
-#     return rect
+# マス座標取得（左上xy、右下xy）
+def get_rect(x, y):
+    sq = gui.cnvs_sq
+    rect = (x * sq, y * sq, (x + 1) * sq, (y + 1) * sq)
+    return rect
 
-# # マス描画
-# def draw_sq(canvas, rect):
+# マス描画
+def draw_sq(canvas, rect):
+    pass
 #     x0, y0, x1, y1 = rect
 #     pad = 2
 
@@ -40,8 +41,9 @@ def draw(canvas):
 #     x0 += pad; y0 += pad
 #     canvas.create_rectangle(x0, y0, x1, y1, fill='#00aa00', width=0)
 
-# # 石描画
-# def draw_token(canvas, rect, player):
+# 石描画
+def draw_token(canvas, rect, player):
+    pass
 #     x0, y0, x1, y1 = rect
 #     margin = 8
 #     pad = 4
