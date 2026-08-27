@@ -1,5 +1,4 @@
-from . import win, tarea, button
-# from . import win, tarea, button, board
+from . import win, tarea, button, board
 from rev import info, data
 from ui import proc
 
@@ -10,7 +9,7 @@ def start():
     root = win.init_win()
     tarea.init(root)
     button.init(root)
-    # board.init(root)
+    board.init(root)
 
     proc.start()    # 開始
     if data.player == 1:

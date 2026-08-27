@@ -30,16 +30,15 @@ def get_rect(x, y):
 
 # マス描画
 def draw_sq(canvas, rect):
-    pass
-#     x0, y0, x1, y1 = rect
-#     pad = 2
+    x0, y0, x1, y1 = rect
+    pad = 2
 
-#     # ずらしながら立体風に描画
-#     canvas.create_rectangle(x0, y0, x1, y1, fill='#006600', width=0)
-#     x0 += pad; y0 += pad; x1 -= pad; y1 -= pad
-#     canvas.create_rectangle(x0, y0, x1, y1, fill='#008800', width=0)
-#     x0 += pad; y0 += pad
-#     canvas.create_rectangle(x0, y0, x1, y1, fill='#00aa00', width=0)
+    # ずらしながら立体風に描画
+    canvas.create_rectangle(x0, y0, x1, y1, fill='#006600', width=0)
+    x0 += pad; y0 += pad; x1 -= pad; y1 -= pad
+    canvas.create_rectangle(x0, y0, x1, y1, fill='#008800', width=0)
+    x0 += pad; y0 += pad
+    canvas.create_rectangle(x0, y0, x1, y1, fill='#00aa00', width=0)
 
 # 石描画
 def draw_token(canvas, rect, player):
@@ -58,8 +57,9 @@ def draw_token(canvas, rect, player):
 #     col = ['#202020', '#ffffff'][player]
 #     canvas.create_oval(x0, y0, x1, y1, fill=col, width=0)
 
-# # 表示描画（valid:配置可能マス、put:配置マス）
-# def draw_view(canvas, rect, view='valid'):
+# 表示描画（valid:配置可能マス、put:配置マス）
+def draw_view(canvas, rect, view='valid'):
+    pass
 #     x0, y0, x1, y1 = rect
 #     pad = 4
 
