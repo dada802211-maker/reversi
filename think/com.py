@@ -9,17 +9,17 @@ def get_pos():
 # 思考（COMの内部処理）
 def think(board, player, nest):
     param = {'value': -9999, 'sq': None}
-#     valid_sqs = info.get_valid_sqs(board, player)
-#     for sq in valid_sqs:
-#         x, y = sq['x'], sq['y']
-#         value = eval_table(x, y)    # 盤面評価表の利用
-#         value += eval_next(x, y, board, player, nest)   # 次手確認
-#         if value > param['value'] or param['sq'] is None:
-#             param = {'value': value, 'sq': sq}
+    valid_sqs = info.get_valid_sqs(board, player)
+    for sq in valid_sqs:
+        x, y = sq['x'], sq['y']
+        value = eval_table(x, y)    # 盤面評価表の利用
+        value += eval_next(x, y, board, player, nest)   # 次手確認
+        if value > param['value'] or param['sq'] is None:
+            param = {'value': value, 'sq': sq}
     return param
 
-# # 盤面評価表の利用
-# def eval_table(x, y):
+# 盤面評価表の利用
+def eval_table(x, y):
 #     value_table = [
 #         [64,  1,  8,  4,  4,  8,  1, 64],
 #         [ 1,  1, 10, 12, 12, 10,  1,  1],
@@ -30,10 +30,11 @@ def think(board, player, nest):
 #         [ 1,  1, 10, 12, 12, 10,  1,  1],
 #         [64,  1,  8,  4,  4,  8,  1, 64]
 #     ]
+    return 0
 #     return value_table[y][x]
 
-# # 次手確認（石を配置した場合の"次の"プレイヤーの点数を引く）
-# def eval_next(x, y, board, player, nest):
+# 次手確認（石を配置した場合の"次の"プレイヤーの点数を引く）
+def eval_next(x, y, board, player, nest):
 #     # nestが2以上のとき
 #     if nest >= 2: return 0
 
@@ -46,3 +47,4 @@ def think(board, player, nest):
 #     enemy = 1 - player
 #     param = think(board2, enemy, nest + 1)  # 再度思考
 #     return - param['value']     # 次の手番の最大評価値を引く
+    return 0
