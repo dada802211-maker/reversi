@@ -58,11 +58,10 @@ def draw_token(canvas, rect, player):
 
 # 表示描画（valid:配置可能マス、put:配置マス）
 def draw_view(canvas, rect, view='valid'):
-    pass
-#     x0, y0, x1, y1 = rect
-#     pad = 4
+    x0, y0, x1, y1 = rect
+    pad = 4
 
-#     # 表示描画
-#     x0 += pad; y0 += pad; x1 -= pad; y1 -= pad
-#     col = {'valid': '#ffff88', 'put': '#88ffff'}[view]
-#     canvas.create_rectangle(x0, y0, x1, y1, fill='', outline=col, width=pad * 2)
+    # 表示描画
+    x0 += pad; y0 += pad; x1 -= pad; y1 -= pad
+    col = {'valid': '#ffff88', 'put': '#88ffff'}[view]
+    canvas.create_rectangle(x0, y0, x1, y1, fill='', outline=col, width=pad * 2)
