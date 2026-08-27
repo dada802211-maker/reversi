@@ -1,6 +1,5 @@
 import tkinter as tk
-from . import gui, tarea
-# from . import gui, tarea, board
+from . import gui, tarea, board
 from rev import data
 from ui import proc
 
@@ -14,5 +13,5 @@ def push():
     tarea.reset()
     data.reset()
     proc.start()    # 開始
-    # 盤面描画を実装予定
-    # board.draw()
+    # 盤面描画を実装
+    board.draw()
